@@ -16,7 +16,7 @@ document.getElementById('submit-answer').addEventListener("click", ()=>{
     let progress = document.getElementById('progress').textContent;
     console.log(progress)
     let answer = document.getElementById('answer').value.trim().toLowerCase();
-    if (answer == "cyber quest for the coin" && progress == 'true'){
+    if (answer == "raven’s cyber cache" && progress == 'true'){
         document.querySelector('.form-section').classList.add('show');
         event.preventDefault();
     } else{
