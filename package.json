@@ -1,0 +1,20 @@
+{
+  "name": "cybernex-2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cyber Warriors Club",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.3",
+    "express-session": "^1.18.0",
+    "path": "^0.12.7",
+    "pug": "^3.0.2",
+    "uuid": "^9.0.1"
+  }
+}
