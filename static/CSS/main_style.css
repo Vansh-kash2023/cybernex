@@ -25,7 +25,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-	background-image: url('src/background.jpg');
+	background-image: url('/static/src/background.jpg');
 	background-position: center center;
 	background-size: cover;
 	margin: 0;
