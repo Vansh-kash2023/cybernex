@@ -13,5 +13,5 @@ document.getElementById('submit-answer').addEventListener("click", ()=>{
 })
 
 document.getElementById("click").addEventListener("click", function() {
-    alert("Hey");
+    alert("Hint");
 });

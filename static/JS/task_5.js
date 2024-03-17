@@ -1,5 +1,5 @@
 document.getElementById("click").addEventListener("click", function() {
-    alert("Hey");
+    alert("Hint");
 });
 
 // document.getElementById("myForm").addEventListener("submit", function(event) {
