@@ -94,6 +94,10 @@ app.get('/:sessionID/task-5',(req,res)=>{
     console.log(req.session);
     res.status(200).render('task_5.pug',{progress});
 });
+app.post('/:sessionID/task-5',(req,res)=>{
+    req.session.progress.task5 = true;
+    res.status(200).send('All Tasks Completed');
+})
 
 app.listen(port,()=>{
     console.log(`Application Started at ${port} on localhost (127.0.0.1:8000)`);
