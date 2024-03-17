@@ -1,5 +1,5 @@
 document.getElementById("click").addEventListener("click", function() {
-    alert("Hey");
+    alert("Doha'v yluwxdo nhb txhvw");
 });
 // document.getElementById("myForm").addEventListener("submit", function(event) {
 // event.preventDefault(); // Prevent the default form submission behavior
@@ -31,7 +31,7 @@ document.getElementById('submit-answer').addEventListener("click", ()=>{
         let progress = document.getElementById('progress').textContent;
         console.log(progress)
         let answer = document.getElementById('answer').value.trim().toLowerCase();
-        if (answer == "teddy’s digital dilemma" && progress == 'true'){
+        if (answer == "alex's virtual key quest" && progress == 'true'){
             document.querySelector('.form-section').classList.add('show');
             event.preventDefault();
         }else if (progress === 'false') {
