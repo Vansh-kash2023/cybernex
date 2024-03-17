@@ -1,6 +1,6 @@
-// document.getElementById("click").addEventListener("click", function() {
-//     alert("Hey");
-// });
+document.getElementById("click").addEventListener("click", function() {
+    alert("Hey");
+});
 // document.getElementById("myForm").addEventListener("submit", function(event) {
 // event.preventDefault(); // Prevent the default form submission behavior
 // var message = document.getElementById("message").value.trim().toLowerCase();
@@ -34,6 +34,9 @@ document.getElementById('submit-answer').addEventListener("click", ()=>{
         if (answer == "teddy’s digital dilemma" && progress == 'true'){
             document.querySelector('.form-section').classList.add('show');
             event.preventDefault();
+        }else if (progress === 'false') {
+            // Alert the user
+            alert('You have not cleared the previous task');
         } else{
             alert('Enter Correct Answer');
             event.preventDefault();
