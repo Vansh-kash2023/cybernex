@@ -30,7 +30,11 @@ app.use(session({
 
 app.get('/',async (req,res)=>{
     req.session.sessionID = await generateRandomSequence(16);
-    let sequenceID = `${req.session.sessionID}/task-1`
+    let sequenceIDtask1 = `${req.session.sessionID}/task-1`;
+    let sequenceIDtask2 = `${req.session.sessionID}/task-2`;
+    let sequenceIDtask3 = `${req.session.sessionID}/task-3`;
+    let sequenceIDtask4 = `${req.session.sessionID}/task-4`;
+    let sequenceIDtask5 = `${req.session.sessionID}/task-5`;
     req.session.progress = {
         task1 : false,
         task2 : false,
@@ -39,7 +43,7 @@ app.get('/',async (req,res)=>{
         task5 : false
     };
     console.log(req.session);
-    res.status(200).render('index.pug',{sequence:sequenceID,progress:req.session.progress});
+    res.status(200).render('index.pug',{sequencetask1:sequenceIDtask1,sequencetask2:sequenceIDtask2,sequencetask3:sequenceIDtask3,sequencetask4:sequenceIDtask4,sequencetask5:sequenceIDtask5,progress:req.session.progress});
 });
 
 app.get('/:sessionID/task-1',(req,res)=>{
@@ -61,7 +65,6 @@ app.post('/:sessionID/task-2',(req,res)=>{
     req.session.progress.task2 = true;
     res.status(200).redirect(`/${req.session.sessionID}/task-3`)
 })
-
 
 app.get('/:sessionID/task-3',(req,res)=>{
     let progress = req.session.progress.task2;

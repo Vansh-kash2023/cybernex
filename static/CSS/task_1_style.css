@@ -111,7 +111,7 @@ section .signin {
     display: flex;
     flex-direction: column;
     opacity: 1;
-    z-index: 5;
+    z-index: 1001;
 }
 
 section .signin .content {
@@ -133,6 +133,32 @@ section .signin .content h2 {
 .modal-heading{
     color: rgb(177, 16, 177);
 }
+
+/* div .signin .content .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+} */
+
+.form-section{
+    height: max-content;
+    width: 400px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 29px;
+    background: black;
+    border: 2px solid #6c656596;
+    border-radius: 10px;
+    box-shadow: 2px 4px 2px 4px;
+}
+
+.flex-justify-center{
+    display: flex;
+    justify-content: center;
+}
+
 section .signin .content .form {
     width: 100%;
     display: flex;
