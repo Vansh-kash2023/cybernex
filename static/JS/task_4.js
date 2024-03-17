@@ -1,6 +1,6 @@
-// document.getElementById("click").addEventListener("click", function() {
-//     alert("Hey");
-// });
+document.getElementById("click").addEventListener("click", function() {
+    alert("Hint");
+});
 
 // document.getElementById("myForm").addEventListener("submit", function(event) {
 // event.preventDefault(); // Prevent the default form submission behavior
@@ -22,6 +22,9 @@ document.getElementById('submit-answer').addEventListener("click", ()=>{
     if (answer == "the fox’s digital hoard" && progress == 'true'){
         document.querySelector('.form-section').classList.add('show');
         event.preventDefault();
+    }else if (progress === 'false') {
+        // Alert the user
+        alert('You have not cleared the previous task');
     } else{
         alert('Enter Correct Answer');
         event.preventDefault();
