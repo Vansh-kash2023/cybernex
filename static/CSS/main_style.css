@@ -5,6 +5,8 @@
 	font-family: "Poppins", sans-serif;
 }
 
+
+
 body,
 html {
 	-webkit-text-size-adjust: 100%;
@@ -390,5 +392,12 @@ nav > ul > li:nth-child(5) {
 	}
 	#nav-toggle:checked ~ nav > ul > li:nth-child(5) {
 		bottom: 0% !important;
+	}
+}
+
+
+@media (max-width: 1000px) {
+	.animated-text{
+		font-size: 23px !important;
 	}
 }
