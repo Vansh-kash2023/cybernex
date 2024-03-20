@@ -28,7 +28,7 @@ app.use(session({
     resave: false
 }));
 
-app.get('https://visionary-sunflower-1b5431.netlify.app/',async (req,res)=>{
+app.get('/',async (req,res)=>{
     req.session.sessionID = await generateRandomSequence(16);
     let sequenceIDtask1 = `${req.session.sessionID}/task-1`;
     let sequenceIDtask2 = `${req.session.sessionID}/task-2`;
@@ -46,7 +46,7 @@ app.get('https://visionary-sunflower-1b5431.netlify.app/',async (req,res)=>{
     res.status(200).render('index.pug',{sequencetask1:sequenceIDtask1,sequencetask2:sequenceIDtask2,sequencetask3:sequenceIDtask3,sequencetask4:sequenceIDtask4,sequencetask5:sequenceIDtask5,progress:req.session.progress});
 });
 
-app.get('https://visionary-sunflower-1b5431.netlify.app/:sessionID/task-1',(req,res)=>{
+app.get('/:sessionID/task-1',(req,res)=>{
     res.status(200).render('task_1.pug');
 });
 app.post('/:sessionID/task-1',(req,res)=>{
@@ -56,45 +56,45 @@ app.post('/:sessionID/task-1',(req,res)=>{
     res.status(200).redirect(`/${req.session.sessionID}/task-2`);
 });
 
-app.get('https://visionary-sunflower-1b5431.netlify.app/:sessionID/task-2',(req,res)=>{
+app.get('/:sessionID/task-2',(req,res)=>{
     let progress = req.session.progress.task1;
     console.log(progress)
     res.status(200).render('task_2.pug',{progress:progress});
 });
-app.post('https://visionary-sunflower-1b5431.netlify.app/:sessionID/task-2',(req,res)=>{
+app.post('/:sessionID/task-2',(req,res)=>{
     req.session.progress.task2 = true;
     res.status(200).redirect(`/${req.session.sessionID}/task-3`)
 })
 
-app.get('https://visionary-sunflower-1b5431.netlify.app/:sessionID/task-3',(req,res)=>{
+app.get('/:sessionID/task-3',(req,res)=>{
     let progress = req.session.progress.task2;
     console.log(req.session.sessionID);
     console.log(req.session);
     res.status(200).render('task_3.pug',{progress:progress});
 });
-app.post('https://visionary-sunflower-1b5431.netlify.app/:sessionID/task-3',(req,res)=>{
+app.post('/:sessionID/task-3',(req,res)=>{
     req.session.progress.task3 = true;
     res.status(200).redirect(`/${req.session.sessionID}/task-4`)
 })
 
-app.get('https://visionary-sunflower-1b5431.netlify.app/:sessionID/task-4',(req,res)=>{
+app.get('/:sessionID/task-4',(req,res)=>{
     let progress = req.session.progress.task3;
     console.log(req.session.sessionID);
     console.log(req.session);
     res.status(200).render('task_4.pug',{progress:progress});
 });
-app.post('https://visionary-sunflower-1b5431.netlify.app/:sessionID/task-4',(req,res)=>{
+app.post('/:sessionID/task-4',(req,res)=>{
     req.session.progress.task4 = true;
     res.status(200).redirect(`/${req.session.sessionID}/task-5`)
 })
 
-app.get('https://visionary-sunflower-1b5431.netlify.app/:sessionID/task-5',(req,res)=>{
+app.get('/:sessionID/task-5',(req,res)=>{
     let progress = req.session.progress.task4;
     console.log(req.session.sessionID);
     console.log(req.session);
     res.status(200).render('task_5.pug',{progress});
 });
-app.post('https://visionary-sunflower-1b5431.netlify.app/:sessionID/task-5',(req,res)=>{
+app.post('/:sessionID/task-5',(req,res)=>{
     req.session.progress.task5 = true;
     res.status(200).send('All Tasks Completed');
 })
