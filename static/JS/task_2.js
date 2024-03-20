@@ -1,6 +1,9 @@
 document.getElementById("click").addEventListener("click", function() {
     alert("Doha'v yluwxdo nhb txhvw");
 });
+
+
+var decryptBox = document.getElementById("decrypt-box");
 // document.getElementById("myForm").addEventListener("submit", function(event) {
 // event.preventDefault(); // Prevent the default form submission behavior
 // var message = document.getElementById("message").value.trim().toLowerCase();
@@ -27,12 +30,28 @@ document.getElementById("click").addEventListener("click", function() {
 //     }
 // })
 
+window.oncontextmenu=function(){
+    return false;
+}
+
+document.addEventListener('keydown', function() {
+    if (event.ctrlKey && event.shiftKey && event.key === 'I') {
+        event.preventDefault();
+        // alert('Ctrl + Shift + I has been disabled.');
+    } else if (event.ctrlKey && event.shiftKey && event.key === 'i'){
+        event.preventDefault();
+        // alert('Ctrl + Shift + I has been disabled.');
+    }
+});
+
 document.getElementById('submit-answer').addEventListener("click", ()=>{
         let progress = document.getElementById('progress').textContent;
         console.log(progress)
         let answer = document.getElementById('answer').value.trim().toLowerCase();
+        // answer.setAttribute("type", "text");
         if (answer == "alex's virtual key quest" && progress == 'true'){
             document.querySelector('.form-section').classList.add('show');
+            decryptBox.style.display = "none";
             event.preventDefault();
         }else if (progress === 'false') {
             // Alert the user
